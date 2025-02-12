@@ -1,0 +1,14 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow p-4" style="width: 400px;">
+        <h2 class="text-center">Add Note</h2>
+        <form method="POST" class="d-flex flex-column justify-content-center">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success w-100">Add Note</button>
+        </form>
+        <p class="text-center mt-3"><a href="{% url 'home' %}" class="btn btn-secondary w-100">Back to Home</a></p>
+    </div>
+</div>
+{% endblock %}
